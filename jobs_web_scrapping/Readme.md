@@ -3,7 +3,7 @@
 **Python** - Main Language </br>
 **Pandas** - Data aggregation lib </br>
 **Beautiful Soup** - Web Scrapping Lib </br>
-**Requests** - HTTP lib </br>
+**Requests** - HTTP Lib </br>
 **Matplotlib** - Data Visualisation Lib </br>
 **Jupyter Notebook** </br>
 
