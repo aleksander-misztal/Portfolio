@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5001:5000"
+    environment:
+      - FLASK_ENV=development
+    volumes:
+      - .:/app
+    networks:
+      - flask-network
+
+networks:
+  flask-network:
+    driver: bridge
