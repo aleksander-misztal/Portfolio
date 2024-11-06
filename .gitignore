@@ -1,0 +1,15 @@
+# Ignore virtual environments
+*/env/
+
+# Ignore Python bytecode files
+*/__pycache__/
+
+# Ignore macOS system files
+*.DS_Store
+
+# Ignore all files in the uploads folder, except the folder itself
+image_captioning/uploads/*
+!image_captioning/uploads/
+
+# Ignore log files
+*.log
