@@ -1,11 +1,69 @@
-# My Projects Portfolio
+# Image Captioning API
 
-Welcome to my projects portfolio! This repository contains various personal projects showcasing my skills in software development, machine learning, web development, and more. Each project is contained within its own folder, with individual README files describing their functionality and setup instructions.
+A Flask-based API that generates image captions using the BLIP model from Hugging Face.
 
-## Projects
+## Features
 
-This repository includes the following projects:
+- Accepts image URLs via POST request
+- Downloads and preprocesses the image
+- Uses a transformer model to generate captions
+- Containerized with Docker
 
-1. **Image Captioning API**  
-   A Flask-based API that uses the BLIP model for generating captions for images. This project demonstrates how to create a machine learning-powered API with TensorFlow and deploy it in a Docker container.  
-   [Image Captioning with BLIP Model](./image_captioning)
+## Setup
+
+### Docker
+
+Build and start the application:
+
+```bash
+docker-compose up --build
+```
+
+The service will run at `http://localhost:5001`.
+
+### Local
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the Flask app:
+
+```bash
+export FLASK_APP=app.py
+flask run --host=0.0.0.0 --port=5000
+```
+
+## API
+
+### POST /generate_caption
+
+**Request:**
+```json
+{
+  "image_url": "https://example.com/image.jpg"
+}
+```
+
+**Response:**
+```json
+{
+  "caption": "Generated description of the image.",
+  "filename": "timestamp_uuid.jpg"
+}
+```
+
+## Configuration
+
+Edit `config.py` to set:
+
+- Image size
+- Upload folder
+- Allowed file extensions
+
+## Notes
+
+- TensorFlow GPU usage is disabled by default.
+- Logs are written to `app.log`.
